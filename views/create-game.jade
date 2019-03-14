@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Game Creation Form
+    p.error= error
+    form(method="POST" action="/lobby/create")
+        label Your name:
+        input(name="playerName" type="text" placeholder="Namey McName")
+        br
+        label Game name:
+        input(name="gameName" type="text" placeholder="Gamey McGame")
+        br
+        input(type="submit" value="Create")

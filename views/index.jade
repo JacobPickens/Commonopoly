@@ -5,7 +5,13 @@ block content
   p Click on a game below to join
   hr
   ul.game-list
-    li.game
-      form(method="POST", action="/lobby/join")
-        label Game #1
-        button(name="game", type="submit", value="haroldoasdfg") Join
+    each g in games
+      li.game
+        form(method="POST", action="/lobby/join")
+          label= g.name
+          br
+          label= g.id
+          br
+          button(name="game", type="submit", value="haroldoasdfg") Join
+  a(href="/lobby/create")
+    button Start your own game!
