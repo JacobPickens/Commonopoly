@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Welcome to the lobby
+  p Click on a game below to join
+  hr
+  ul.game-list
+    li.game
+      form(method="POST", action="/lobby/join")
+        label Game #1
+        button(name="game", type="submit", value="haroldoasdfg") Join
