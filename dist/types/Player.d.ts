@@ -1,8 +1,7 @@
-import { GameInstance } from "./GameInstance";
 export declare class Player {
     name: string;
     id: number;
-    game: GameInstance | null;
+    gameId: number;
     /**
      * An instance of a player
      *

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 This is the game lobby for #{gameName}
+    ul.players
+        each p in playerData
+            li.player
+                if p.name == playerName
+                    h3(style="color: blue;")= playerName
+                else
+                    h3(style="color: black;")= p.name
+    script(src="http://localhost:3001/socket.io/socket.io.js")
+    script(src="javascripts/game-lobby.js")

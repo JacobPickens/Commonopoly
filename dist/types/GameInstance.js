@@ -31,10 +31,27 @@ var GameInstance = /** @class */ (function () {
             if (player.name == this.players[i].name)
                 return false;
         }
-        player.game = this;
+        player.gameId = this.id;
         player.id = this.players.length;
-        this.players.push(player);
+        this.players[this.players.length] = player;
+        this.hostId = player.id;
         return true;
+    };
+    /**
+     *
+     * @param { string | number } query - Either a string or number to search for
+     * @returns { Player | false } returns the queried player or false if a player wasn't found
+     */
+    GameInstance.prototype.getPlayer = function (query) {
+        var nan = isNaN(query);
+        // Checks if player's name is already in the game
+        for (var i = 0; i < this.players.length; i++) {
+            if (nan && this.players[i].name == query + "")
+                return this.players[i]; // If the query is a string
+            else if (this.players[i].id == query)
+                return this.players[i]; // If the query is a number
+        }
+        return false; // if nothing was found
     };
     return GameInstance;
 }());

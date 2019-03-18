@@ -4,7 +4,7 @@ export class Player {
     name: string;
     id: number = -1;
 
-    game: GameInstance | null = null;
+    gameId: number = -1;
 
     /**
      * An instance of a player

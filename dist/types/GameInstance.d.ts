@@ -23,4 +23,10 @@ export declare class GameInstance {
      * @return { boolean } True if successful, false otherwise
      */
     join(player: Player): boolean;
+    /**
+     *
+     * @param { string | number } query - Either a string or number to search for
+     * @returns { Player | false } returns the queried player or false if a player wasn't found
+     */
+    getPlayer(query: number): Player | false;
 }

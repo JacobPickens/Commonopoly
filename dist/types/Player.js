@@ -8,7 +8,7 @@ var Player = /** @class */ (function () {
      */
     function Player(name) {
         this.id = -1;
-        this.game = null;
+        this.gameId = -1;
         this.name = name;
     }
     return Player;

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Joining #{gameName}
+    p.error= error
+    form(method="POST" action="/lobby/join")
+        label Your name:
+        input(name="playerName" type="text" placeholder="Namey McName")
+        br
+        button(name="gameId" type="submit" value="#{gameID}") Join

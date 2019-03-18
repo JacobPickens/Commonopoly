@@ -7,11 +7,11 @@ block content
   ul.game-list
     each g in games
       li.game
-        form(method="POST", action="/lobby/join")
+        form(method="GET", action="/lobby/join")
           label= g.name
           br
           label= g.id
           br
-          button(name="game", type="submit", value="haroldoasdfg") Join
+          button(name="game", type="submit", value="#{g.id}") Join
   a(href="/lobby/create")
     button Start your own game!
